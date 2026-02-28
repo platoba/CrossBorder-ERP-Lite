@@ -42,6 +42,27 @@ async def override_get_db() -> AsyncGenerator[AsyncSession, None]:
 app.dependency_overrides[get_db] = override_get_db
 
 
+def _reset_rate_limiter():
+    """Reset the in-memory rate limiter between tests to avoid 429s."""
+    for mw in app.user_middleware:
+        if hasattr(mw, "cls") and mw.cls.__name__ == "RateLimitMiddleware":
+            break
+    # Walk the middleware stack to find the rate limiter instance
+    cur = app.middleware_stack
+    while cur is not None:
+        if hasattr(cur, "limiter"):
+            cur.limiter.reset()
+            return
+        cur = getattr(cur, "app", None)
+
+
+@pytest_asyncio.fixture(autouse=True)
+async def reset_rate_limits():
+    """Auto-reset rate limiter before each test."""
+    _reset_rate_limiter()
+    yield
+
+
 @pytest_asyncio.fixture
 async def client() -> AsyncGenerator[AsyncClient, None]:
     transport = ASGITransport(app=app)
