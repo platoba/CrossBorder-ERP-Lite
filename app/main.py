@@ -9,7 +9,7 @@ from app.config import get_settings
 from app.database import engine, Base
 from app.api import products, orders, dashboard, suppliers, inventory
 from app.api import purchase_orders, auth_routes, reports
-from app.api import warehouse, returns, customers, restock
+from app.api import warehouse, returns, customers, restock, inventory_sync
 from app.middleware.rate_limit import RateLimitMiddleware
 
 
@@ -57,6 +57,7 @@ app.include_router(warehouse.router, prefix="/api/v1")
 app.include_router(returns.router, prefix="/api/v1")
 app.include_router(customers.router, prefix="/api/v1")
 app.include_router(restock.router, prefix="/api/v1")
+app.include_router(inventory_sync.router, prefix="/api/v1")
 
 
 @app.get("/health")
