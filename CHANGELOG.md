@@ -1,3 +1,26 @@
+## [4.1.0] - 2026-03-02
+
+### Added
+- **智能补货建议引擎** (`/api/v1/restock`)
+  - 基于销售趋势、库存周转率、供应商交期自动生成补货建议
+  - 计算日均销量、补货点、安全库存、经济订货量(EOQ)
+  - 四级优先级系统：紧急/高/中/低
+  - 库存可用天数预测
+  - 补货成本汇总报告
+  - 支持单产品分析和批量建议
+  - 紧急补货快速查询接口
+
+### Endpoints
+- `GET /api/v1/restock/recommendations` - 获取补货建议列表（支持优先级过滤）
+- `GET /api/v1/restock/recommendations/{product_id}` - 单产品补货分析
+- `GET /api/v1/restock/urgent` - 紧急补货建议（库存<7天）
+- `GET /api/v1/restock/summary` - 补货汇总报告
+
+### Technical
+- 新增 `RestockAdvisor` 服务类
+- 新增 `RestockRecommendation` 和 `RestockPriority` 数据模型
+- 完整的单元测试覆盖（15个测试用例）
+
 # Changelog
 
 ## [4.0.0] — 2026-02-28

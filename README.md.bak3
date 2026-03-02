@@ -33,12 +33,6 @@
 - **Business Overview** — Top products, platform breakdown, comprehensive KPIs
 
 ### Operations
-- **Restock Advisor** — AI-powered restock recommendations based on sales trends, inventory turnover, and supplier lead times
-  - Daily sales rate calculation and demand forecasting
-  - Reorder point, safety stock, and EOQ (Economic Order Quantity) calculation
-  - 4-tier priority system (urgent/high/medium/low)
-  - Days-of-stock prediction and cost estimation
-  - Bulk recommendations and urgent restock alerts
 - **Notifications** — Order lifecycle events via webhook, Telegram, email, log
 - **Inventory Alerts** — Low stock, out-of-stock, reorder suggestions
 - **EOQ Calculator** — Economic Order Quantity for optimal reorder amounts

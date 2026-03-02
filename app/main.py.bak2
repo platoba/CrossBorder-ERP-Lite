@@ -56,7 +56,6 @@ app.include_router(reports.router, prefix="/api/v1")
 app.include_router(warehouse.router, prefix="/api/v1")
 app.include_router(returns.router, prefix="/api/v1")
 app.include_router(customers.router, prefix="/api/v1")
-app.include_router(restock.router, prefix="/api/v1")
 
 
 @app.get("/health")
