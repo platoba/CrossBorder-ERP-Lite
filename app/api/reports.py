@@ -1,7 +1,6 @@
 """Reports & Analytics API — profit reports, sales trends, inventory health."""
 
 from decimal import Decimal
-from datetime import datetime, timezone
 
 from fastapi import APIRouter, Depends, Query
 from pydantic import BaseModel

@@ -17,11 +17,9 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import csv
 import json
 import sys
 from decimal import Decimal
-from io import StringIO
 from pathlib import Path
 
 from app.services.analytics import AnalyticsEngine, Period
@@ -248,12 +246,12 @@ def handle_bulk(args):
             else:
                 result = imp.import_orders_csv(content)
 
-        print(f"Import Summary:")
+        print("Import Summary:")
         for k, v in result.summary().items():
             print(f"  {k}: {v}")
 
         if result.errors:
-            print(f"\nFirst 10 errors:")
+            print("\nFirst 10 errors:")
             for e in result.errors[:10]:
                 print(f"  Row {e.row}, {e.field}: {e.message}")
 

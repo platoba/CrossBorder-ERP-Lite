@@ -1,6 +1,5 @@
 """Config tests."""
 
-import pytest
 
 from app.config import Settings, get_settings
 

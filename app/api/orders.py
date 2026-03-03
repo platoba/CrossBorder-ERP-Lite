@@ -1,7 +1,6 @@
 """Order CRUD API."""
 
 import uuid as uuid_mod
-from decimal import Decimal
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException, Query

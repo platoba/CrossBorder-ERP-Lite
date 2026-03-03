@@ -1,0 +1,8 @@
+[lint]
+ignore = [
+    "E501",  # Line too long
+    "E741",  # Ambiguous variable name
+    "N806",  # Variable in function should be lowercase
+    "F841",  # Local variable assigned but never used
+    "W293",  # Blank line contains whitespace
+]

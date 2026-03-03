@@ -1,6 +1,5 @@
 """Inventory alert service tests."""
 
-import pytest
 from decimal import Decimal
 
 from app.services.inventory_alert import (

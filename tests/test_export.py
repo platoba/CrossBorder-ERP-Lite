@@ -1,7 +1,6 @@
 """Export service tests."""
 
 import json
-import pytest
 from decimal import Decimal
 
 from app.services.export import ExportService

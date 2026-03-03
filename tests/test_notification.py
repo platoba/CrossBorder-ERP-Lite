@@ -1,6 +1,5 @@
 """Notification service tests."""
 
-import pytest
 from decimal import Decimal
 
 from app.services.notification import (

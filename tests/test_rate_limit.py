@@ -1,7 +1,5 @@
 """Rate limiter tests."""
 
-import pytest
-import time
 
 from app.middleware.rate_limit import RateLimiter
 

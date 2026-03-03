@@ -10,7 +10,7 @@ import csv
 import io
 import json
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import datetime
 from decimal import Decimal, InvalidOperation
 from typing import Any, Optional
 

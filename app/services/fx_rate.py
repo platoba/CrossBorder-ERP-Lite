@@ -3,7 +3,6 @@
 Fetches real-time FX rates and caches them for cross-border pricing.
 """
 
-import asyncio
 from datetime import datetime, timezone
 from decimal import Decimal
 from typing import Optional

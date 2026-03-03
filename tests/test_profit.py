@@ -1,6 +1,5 @@
 """Profit calculator tests."""
 
-import pytest
 from decimal import Decimal
 
 from app.services.profit_calc import CostBreakdown, ProfitCalculator, ProfitReport
